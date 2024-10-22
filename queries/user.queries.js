@@ -1,15 +1,20 @@
+const { QueryTypes } = require("sequelize");
 const db = require("../models");
 
-const getAllUsers = async () => {
-    try {
-        const users = await db.user.findAll();
-        console.log(users);
-        return users;
-    } catch (error) {
-        console.log(error);
-    }
+const getAllUsersQuery = async () => {
+    const users = await db.user.findAll();
+    return users ? users : [];
 }
 
-module.exports = {
-    getAllUsers
+const getUserByIdQuery = async (id) => {
+    // const user = await db.user.findByPk(id);
+    const user = await db.sequelize.query(`Select * from "user" where id = ${id}`,
+        {type: db.sequelize.QueryTypes.SELECT}
+    )
+    return user ? user : [];
+}
+
+module.exports = {      
+    getAllUsersQuery,
+    getUserByIdQuery  
 }

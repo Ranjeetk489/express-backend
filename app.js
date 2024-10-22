@@ -20,7 +20,7 @@ router.get('/health', (req,res) =>  {
         "Server is up and running"
     )
 })
-router.use('/apis/v1', require('./routes/users.routes'));
+router.use('/apis', require('./routes/users.routes'));
 
 
 
