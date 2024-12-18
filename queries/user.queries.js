@@ -14,7 +14,15 @@ const getUserByIdQuery = async (id) => {
     return user ? user : [];
 }
 
+const signupUser = async (email, username, password) => {
+    const user = await db.sequelize.query(
+        // `Insert into "user" (email, firstName, password) values ('${email}', '${username}', '${password}')`,  
+    )
+    return user;
+}
+
 module.exports = {      
     getAllUsersQuery,
-    getUserByIdQuery  
+    getUserByIdQuery,
+    signupUser 
 }

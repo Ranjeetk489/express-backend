@@ -1,0 +1,3 @@
+[23 Oct, 2024 - 17:13:05:135] [31merror[39m: [31mrelation "users" does not exist[39m
+[23 Oct, 2024 - 17:13:42:1342] [31merror[39m: [31mcolumn "username" of relation "user" does not exist[39m
+[23 Oct, 2024 - 17:13:59:1359] [31merror[39m: [31mcolumn "firstname" of relation "user" does not exist[39m
